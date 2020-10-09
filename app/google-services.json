@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "650440068134",
+    "firebase_url": "https://brocode-6dd61.firebaseio.com",
+    "project_id": "brocode-6dd61",
+    "storage_bucket": "brocode-6dd61.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650440068134:android:f8e6c806ef8ade1332aae7",
+        "android_client_info": {
+          "package_name": "com.example.brocode"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "650440068134-a0fm43u4o7d5fggpr53fsc7gvr1tgqi0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.brocode",
+            "certificate_hash": "0236186e1ea99ed3d7eca02209bc17afa0cfdbbb"
+          }
+        },
+        {
+          "client_id": "650440068134-lktp19jbmtfonr7j0e8u83920c2c8h43.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABA-gY_KoZW7-49V4WBH6eDFfT2kE9FPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "650440068134-lktp19jbmtfonr7j0e8u83920c2c8h43.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
