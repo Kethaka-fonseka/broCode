@@ -24,16 +24,16 @@ public class RiderAdapter extends RecyclerView.Adapter<RiderAdapter.riderViewHol
     private Context mCtx;
     private List<Riders> riderList;
     DatabaseReference dbRef;
-    String orderID;
+    Order order;
 
 
 
 
 
-    public RiderAdapter(Context mCtx, List<Riders> riderList,String orderID) {
+    public RiderAdapter(Context mCtx, List<Riders> riderList,Order order) {
         this.mCtx = mCtx;
         this.riderList = riderList;
-        this.orderID=orderID;
+        this.order=order;
     }
     @NonNull
     @Override
@@ -51,14 +51,19 @@ public class RiderAdapter extends RecyclerView.Adapter<RiderAdapter.riderViewHol
             public void onClick(View view) {
                 dbRef= FirebaseDatabase.getInstance().getReference().child("Delivery");
                 Delivery delivery=new Delivery();
-                delivery.setOrderID(orderID);
+                delivery.setOrderID(order.getId());
                 delivery.setRiderID(rider.getRid());
 
-                dbRef.child(orderID).setValue(delivery).addOnCompleteListener(new OnCompleteListener<Void>() {
+                dbRef.child(order.getId()).setValue(delivery).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
+
+ DatabaseReference dbRef2=FirebaseDatabase.getInstance().getReference().child("Order");
+ order.setStatus("AS");
+ dbRef2.child(order.getId()).setValue(order);
 Intent intent4=new Intent(holder.add.getContext(),AssignRider.class);
+intent4.putExtra("order",order);
 intent4.putExtra("rider",rider.getRname());
 holder.add.getContext().startActivity(intent4);
                         }

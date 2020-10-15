@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         dbRef= FirebaseDatabase.getInstance().getReference().child("Order");
-        dbRef.addValueEventListener(new ValueEventListener() {
+        dbRef.orderByChild("status").equalTo("NA").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.hasChildren()){

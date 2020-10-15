@@ -27,13 +27,13 @@ public class displayRider extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_rider);
         Intent intent=getIntent();
-        String orderID=intent.getStringExtra("id");
+        Order order=intent.getParcelableExtra("id");
 
         recyclerView = findViewById(R.id.recyclerView_rider);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         riderList = new ArrayList<>();
-        adapter = new RiderAdapter(this, riderList,orderID);
+        adapter = new RiderAdapter(this, riderList,order);
         recyclerView.setAdapter(adapter);
 
         dbRef= FirebaseDatabase.getInstance().getReference().child("Rider");

@@ -5,6 +5,7 @@ import android.os.Parcelable;
 
 public class Order implements Parcelable {
     private String id;
+    private String status;
     private String address;
 
     public Order() {
@@ -12,6 +13,7 @@ public class Order implements Parcelable {
 
     protected Order(Parcel in) {
         id = in.readString();
+        status = in.readString();
         address = in.readString();
     }
 
@@ -35,6 +37,14 @@ public class Order implements Parcelable {
         this.id = id;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -51,6 +61,7 @@ public class Order implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(id);
+        parcel.writeString(status);
         parcel.writeString(address);
     }
 }

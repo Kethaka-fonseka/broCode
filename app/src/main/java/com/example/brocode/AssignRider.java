@@ -40,13 +40,16 @@ Button confrim,assign;
              if(TextUtils.isEmpty(text.getText().toString().trim())){
                  text.setError("Please assign a rider");
              }
+             else{
+                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
+             }
          }
      });
         assign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent1=new Intent(getApplicationContext(),displayRider.class);
-                intent1.putExtra("id",order.getId());
+                intent1.putExtra("id",order);
                 startActivity(intent1);
             }
         });
